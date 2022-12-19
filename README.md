@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @ribhusanyal
 - 👀 I’m interested in developing assets and collaborations in the areas of Digital Continuity, Digitial Twins, System of Systems
 - 🌱 I’m currently learning Data Mesh, Service Mesh, Blockchain, IoT technologies for Aerospace & Automotive
-- 💞️ I’m looking to collaborate on NodeJS, ExpressJS, MySQL, Sequelize, ReactJS, MongoDB, Azure
+- 💞️ I’m looking to collaborate on NodeJS, ExpressJS, MySQL, Sequelize, ReactJS, MongoDB, Azure, Golang, Python, Kubernetes, Terraform, IaC (Infrastructure as Code)
 - 📫 How to reach me info@ribhusanyal.in
 
 <!---
