@@ -60,3 +60,20 @@ body {
     margin-bottom: 1rem;
     border-radius: 5px;
   }  
+  footer {
+    padding: 1rem;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .social-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .social-links a:hover {
+    color: #666;
+  }  
+  
