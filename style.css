@@ -1,51 +1,62 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
+/* General styles */
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
   }
   
   header {
-    background-color: #333;
+    background: #f4f4f4;
     padding: 1rem;
   }
   
   nav ul {
-    display: flex;
-    justify-content: flex-end;
+    padding: 0;
+    list-style: none;
   }
   
   nav ul li {
-    list-style-type: none;
-    margin-left: 1rem;
+    display: inline;
+    margin-right: 1rem;
   }
   
   nav ul li a {
     text-decoration: none;
-    color: white;
-    text-transform: uppercase;
+    color: #333;
   }
   
   main {
     padding: 2rem;
   }
   
-  section {
-    margin-bottom: 2rem;
-  }
-  
-  h1, h2 {
+  h1 {
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
   
-  footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    padding-left: 1rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Profile image styles */
+  .profile-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }  
