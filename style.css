@@ -59,7 +59,9 @@ body {
     height: auto;
     margin-bottom: 1rem;
     border-radius: 5px;
-  }  
+  }
+  
+  /* Footer styles */
   footer {
     padding: 1rem;
     background-color: #f4f4f4;
@@ -76,4 +78,3 @@ body {
   .social-links a:hover {
     color: #666;
   }  
-  
