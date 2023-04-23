@@ -55,11 +55,12 @@ body {
   
   /* Profile image styles */
   .profile-image {
-    width: 150px;
+    width: 100px; /* Adjust the width to 100px */
     height: auto;
     margin-bottom: 1rem;
     border-radius: 5px;
   }
+  
   
   /* Footer styles */
   footer {
