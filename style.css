@@ -1,81 +1,33 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  header {
-    background: #f4f4f4;
-    padding: 1rem;
-  }
-  
-  nav ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 1rem;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  p {
-    margin-bottom: 1rem;
-  }
-  
-  ul {
-    padding-left: 1rem;
-  }
-  
-  li {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Profile image styles */
-  .profile-image {
-    width: 100px; /* Adjust the width to 100px */
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-  }
-  
-  
-  /* Footer styles */
-  footer {
-    padding: 1rem;
-    background-color: #f4f4f4;
-    text-align: center;
-  }
-  
-  .social-links a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 1rem;
-    font-size: 1.5rem;
-  }
-  
-  .social-links a:hover {
-    color: #666;
-  }  
+/* Add the following CSS rules */
+.tab-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: #f4f4f4;
+}
+
+.tab-content {
+  display: none;
+}
+
+.active {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #fff;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Other CSS rules */
+/* ... */
