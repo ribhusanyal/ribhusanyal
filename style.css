@@ -83,6 +83,6 @@ background-color: #333;
 }
 .collaboration-video {
     text-align: center; /* Center the video in the container */
-    padding: 20px; /* Add some padding around the video */
-    margin: 20px 0; /* Add margin above and below the video */
+    padding: 10px; /* Add some padding around the video */
+    margin: 10px 0; /* Add margin above and below the video */
 }
