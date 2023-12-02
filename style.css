@@ -1,37 +1,69 @@
-/* Add the following CSS rules */
-.tab-links {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-bottom: 1px solid #ccc;
+body {
+    font-family: Arial, sans-serif;
 }
 
-.tab {
-  padding: 10px;
-  cursor: pointer;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
 }
 
-.tab:hover {
-  background-color: #f4f4f4;
+nav ul li {
+    display: inline;
 }
 
-.tab-content {
-  display: none;
+#banner {
+    background-image: url('RibhuSanyal.jpg');
+    height: 500px;
+    background-size: cover;
 }
 
-.active {
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #fff;
+section {
+    padding: 20px;
 }
 
-.tab-content.active {
-  display: block;
+footer {
+background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-.profile-pic {
-  width: 140px;
-  height: 126px;
-  object-fit: cover;
-  margin-bottom: 1rem;
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 24px; /* Adjust size as needed */
+    height: auto;
+}
+
+#exploring-dhrupad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.workshop-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.workshop-content {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.highlighted-workshop {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.collaboration-video {
+    text-align: center; /* Center the video in the container */
+    padding: 20px; /* Add some padding around the video */
+    margin: 20px 0; /* Add margin above and below the video */
 }
