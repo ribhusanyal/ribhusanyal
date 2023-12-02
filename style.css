@@ -27,7 +27,7 @@ nav ul li {
 
 #banner {
     background-image: url('RibhuSanyal.jpg');
-    height: 300px;
+    height: 70%;
     background-size: cover;
 }
 
@@ -60,13 +60,13 @@ background-color: #333;
 
 .workshop-image img {
     max-width: 100%;
-    height: auto;
+    height: 70%;
     border-radius: 8px;
 }
 
 .workshop-hist img {
   max-width: 100%;
-  height: auto;
+  height: 50%;
   border-radius: 8px;
 }
 
