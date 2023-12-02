@@ -78,6 +78,7 @@ background-color: #333;
 .highlighted-workshop {
     background-color: #f5f5f5;
     padding: 15px;
+    height: auto;
     border-radius: 8px;
     margin-top: 20px;
 }
