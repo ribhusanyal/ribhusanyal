@@ -13,8 +13,8 @@ nav ul li {
 }
 
 #banner {
-    background-image: url('RibhuSanyal.jpg');
-    height: 500px;
+    background-image: url('autcoverribhu.jpg');
+    height: 350px;
     background-size: cover;
 }
 
@@ -49,6 +49,12 @@ background-color: #333;
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+.workshop-hist img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .workshop-content {
