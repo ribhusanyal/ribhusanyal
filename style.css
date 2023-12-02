@@ -3,13 +3,26 @@ body {
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  list-style: none;
 }
 
 nav ul li {
-    display: inline;
+  margin: 0 10px;
+}
+
+/* Responsive styles for mobile */
+@media screen and (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul li {
+      margin: 5px 0;
+  }
 }
 
 #banner {
