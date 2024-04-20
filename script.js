@@ -13,60 +13,37 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   });
 
-  // Handling tab functionality
+  // Tabs functionality for course contents
   const tabs = document.querySelectorAll(".tab");
   const tabContents = document.querySelectorAll(".tab-content");
 
-  function selectTab(e) {
-      e.preventDefault();
-
-      // Deactivate all tabs and hide all contents
-      tabs.forEach(tab => {
-          tab.classList.remove('active');
-      });
-      tabContents.forEach(content => {
-          content.style.display = 'none';
-      });
-
-      // Activate clicked tab and display its content
-      this.classList.add('active');
-      const activeTabContent = document.querySelector(this.getAttribute('href'));
-      activeTabContent.style.display = 'block';
-  }
-
   tabs.forEach(tab => {
-      tab.addEventListener('click', selectTab);
+      tab.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          // Deactivate all tabs and hide all contents
+          tabs.forEach(t => {
+              t.classList.remove('active');
+          });
+          tabContents.forEach(content => {
+              content.style.display = 'none';
+          });
+
+          // Activate clicked tab and display its content
+          this.classList.add('active');
+          const activeTabContent = document.querySelector(this.getAttribute('href'));
+          activeTabContent.style.display = 'block';
+      });
   });
 
-  // Fetch and display course contents dynamically (optional)
-  function fetchCourseContent(courseId) {
-      console.log(`Fetching content for ${courseId}`);
-      // Simulated fetch operation; replace with actual AJAX request if needed
-      return {
-          title: `${courseId} Course`,
-          description: `Detailed description of the ${courseId} course.`
-      };
-  }
-
-  function updateTabContent(e) {
-      const courseContent = fetchCourseContent(this.textContent.trim());
-      const targetTab = document.querySelector(this.getAttribute('href'));
-      targetTab.querySelector('h3').textContent = courseContent.title;
-      targetTab.querySelector('p').textContent = courseContent.description;
-  }
-
-  tabs.forEach(tab => {
-      tab.addEventListener('click', updateTabContent);
-  });
-
-  // Form submission handling for course registration
+  // Form submission for course registration
   document.getElementById('registerForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
       const formData = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          course: document.getElementById('course').value
+          name: this.querySelector('[name="name"]').value,
+          email: this.querySelector('[name="email"]').value,
+          course: this.querySelector('[name="course"]').value
       };
 
       fetch('/enroll', {
@@ -77,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
           body: JSON.stringify(formData)
       })
       .then(response => response.text())
-      .then(data => alert(data))
+      .then(data => alert('Thank you for registering! We will contact you soon.'))
       .catch(error => console.error('Error:', error));
   });
 });
