@@ -1,89 +1,97 @@
+/* Improved Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
 }
-
-nav ul {
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-  list-style: none;
-}
-
-nav ul li {
-  margin: 0 10px;
-}
-
-/* Responsive styles for mobile */
-@media screen and (max-width: 768px) {
-  nav ul {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  nav ul li {
-      margin: 5px 0;
-  }
-}
-
-#banner {
-    background-image: url('RibhuSanyal.jpg');
-    height: 350px;
-    background-size: cover;
-}
-
-section {
-    padding: 20px;
-}
-
-footer {
-background-color: #333;
-    color: white;
+header {
+    background-color: #6441a5; /* Darker shade for better contrast */
+    color: #ffffff;
+    padding: 20px 0;
     text-align: center;
-    padding: 20px;
 }
-
-.social-media a {
-    margin: 0 10px;
-}
-
-.social-media img {
-    width: 24px; /* Adjust size as needed */
-    height: auto;
-}
-
-#exploring-dhrupad {
+nav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: center;
+    background: #8a2be2;
+    padding: 10px 0;
 }
-
-.workshop-image img {
-    max-width: 100%;
-    height: 70%;
+nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+nav a:hover {
+    background-color: #7b68ee;
+}
+.section {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #6441a5;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    nav a {
+        padding: 10px;
+    }
+}
+.tab-content {
+    background: #fff;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 8px;
 }
 
-.workshop-hist img {
-  max-width: 100%;
-  height: 50%;
-  border-radius: 8px;
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #eee;
+    display: inline-block;
+    margin-right: 5px;
 }
 
-.workshop-content {
-    flex-grow: 1;
-    padding: 0 20px;
+.tab.active {
+    background-color: #ccc;
+}
+input, select, button {
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.highlighted-workshop {
-    background-color: #f5f5f5;
-    padding: 15px;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 20px;
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
-.collaboration-video {
-    text-align: center; /* Center the video in the container */
-    padding: 1px; /* Add some padding around the video */
-    margin: 10px 0; /* Add margin above and below the video */
+
+button:hover {
+    background-color: #45a049;
 }
