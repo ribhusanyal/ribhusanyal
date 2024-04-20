@@ -95,3 +95,15 @@ button {
 button:hover {
     background-color: #45a049;
 }
+.video {
+    margin: 20px 0;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
+    border: none; /* Removes the default border around the iframe */
+}
