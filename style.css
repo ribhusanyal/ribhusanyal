@@ -59,12 +59,18 @@ footer {
     width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     nav {
         flex-direction: column;
     }
     nav a {
         padding: 10px;
+    }
+    .video {
+        flex: 1 1 100%; /* Each video takes full width on small screens */
+    }
+    .video-row {
+        grid-template-columns: 1fr; /* One column grid on small screens */
     }
 }
 
@@ -109,15 +115,20 @@ button:hover {
     background-color: #45a049;
 }
 
+.video-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Create as many columns as needed, each at least 300px wide */
+    gap: 20px; /* Space between videos */
+    padding: 10px;
+}
+
 .video {
-    margin: 20px 0;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
     text-align: center;
 }
 
 iframe {
-    max-width: 100%;
-    border: none;
+    width: 100%;
+    height: 200px; /* Adjust based on your design */
 }
