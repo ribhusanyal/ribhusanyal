@@ -12,30 +12,28 @@ document.addEventListener("DOMContentLoaded", function() {
           });
       });
   });
-});
-
-  // Tabs for course contents
   const tabs = document.querySelectorAll(".tab");
   const tabContents = document.querySelectorAll(".tab-content");
 
-  function selectTab(e) {
-      e.preventDefault();
-      tabs.forEach(tab => {
-          tab.classList.remove('active');
-      });
-      tabContents.forEach(content => {
-          content.style.display = 'none';
-      });
-
-      const targetTab = document.querySelector(this.getAttribute('href'));
-      targetTab.style.display = 'block';
-      this.classList.add('active');
-  }
-
   tabs.forEach(tab => {
-      tab.addEventListener('click', selectTab);
-      tab.click(); // Initialize the first tab
+      tab.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          // Remove active class from all tabs
+          tabs.forEach(t => t.classList.remove('active'));
+          // Hide all tab contents
+          tabContents.forEach(content => content.style.display = 'none');
+
+          // Add active class to clicked tab and display corresponding tab content
+          this.classList.add('active');
+          const activeTabContent = document.querySelector(this.getAttribute('href'));
+          activeTabContent.style.display = 'block';
+      });
   });
+
+  // Optionally: Click the first tab to open it by default on page load
+  tabs[0].click();
+});
 
 // Simulated fetch function for course contents
 function fetchCourseContent(courseId) {
