@@ -1,46 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Smooth scrolling for navigation links
   const links = document.querySelectorAll("nav a");
   links.forEach(link => {
       link.addEventListener('click', function(e) {
           e.preventDefault();
           const href = this.getAttribute('href');
-          const offsetTop = document.querySelector(href).offsetTop;
-
-          scroll({
-              top: offsetTop - 100, // Adjusts scroll position to not hide under fixed header if any
+          const offsetTop = document.querySelector(href).offsetTop - 100;
+          window.scrollTo({
+              top: offsetTop,
               behavior: "smooth"
           });
       });
   });
-      const tabs = document.querySelectorAll(".tab");
-    const tabContents = document.querySelectorAll(".tab-content");
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            // Remove active class from all tabs
-            tabs.forEach(t => t.classList.remove('active'));
-            // Hide all tab contents
-            tabContents.forEach(content => content.style.display = 'none');
-
-            // Add active class to clicked tab and display corresponding tab content
-            this.classList.add('active');
-            const activeTabContent = document.querySelector(this.getAttribute('href'));
-            activeTabContent.style.display = 'block';
-        });
-    });
-
-    // Optionally: Click the first tab to open it by default on page load
-    tabs[0].click();
-});
-
-  // Tabs for course contents
+  // Handling tab functionality
   const tabs = document.querySelectorAll(".tab");
   const tabContents = document.querySelectorAll(".tab-content");
 
   function selectTab(e) {
       e.preventDefault();
+
+      // Deactivate all tabs and hide all contents
       tabs.forEach(tab => {
           tab.classList.remove('active');
       });
@@ -48,72 +28,56 @@ document.addEventListener("DOMContentLoaded", function() {
           content.style.display = 'none';
       });
 
-      const targetTab = document.querySelector(this.getAttribute('href'));
-      targetTab.style.display = 'block';
+      // Activate clicked tab and display its content
       this.classList.add('active');
+      const activeTabContent = document.querySelector(this.getAttribute('href'));
+      activeTabContent.style.display = 'block';
   }
 
   tabs.forEach(tab => {
       tab.addEventListener('click', selectTab);
-      tab.click(); // Initialize the first tab
   });
 
-// Simulated fetch function for course contents
-function fetchCourseContent(courseId) {
-  // This is a placeholder for where you would make an AJAX request
-  console.log(`Fetching content for ${courseId}`);
-  // Simulate course content
-  return {
-      title: `${courseId} Course`,
-      description: `Detailed description of the ${courseId} course. This part can be dynamically loaded from a server.`,
-  };
-}
+  // Fetch and display course contents dynamically (optional)
+  function fetchCourseContent(courseId) {
+      console.log(`Fetching content for ${courseId}`);
+      // Simulated fetch operation; replace with actual AJAX request if needed
+      return {
+          title: `${courseId} Course`,
+          description: `Detailed description of the ${courseId} course.`
+      };
+  }
 
-// Update tab content dynamically
-function selectTab(e) {
-  e.preventDefault();
+  function updateTabContent(e) {
+      const courseContent = fetchCourseContent(this.textContent.trim());
+      const targetTab = document.querySelector(this.getAttribute('href'));
+      targetTab.querySelector('h3').textContent = courseContent.title;
+      targetTab.querySelector('p').textContent = courseContent.description;
+  }
+
   tabs.forEach(tab => {
-      tab.classList.remove('active');
-  });
-  tabContents.forEach(content => {
-      content.style.display = 'none';
+      tab.addEventListener('click', updateTabContent);
   });
 
-  const targetTab = document.querySelector(this.getAttribute('href'));
-  const courseContent = fetchCourseContent(this.textContent.trim());
-  targetTab.querySelector('h3').textContent = courseContent.title;
-  targetTab.querySelector('p').textContent = courseContent.description;
-  targetTab.style.display = 'block';
-  this.classList.add('active');
-}
+  // Form submission handling for course registration
+  document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-// Initialize tabs with dynamic loading
-document.addEventListener("DOMContentLoaded", function() {
-  tabs.forEach(tab => {
-      tab.addEventListener('click', selectTab);
-      if (tab.classList.contains('active')) tab.click(); // Load initial content
+      const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          course: document.getElementById('course').value
+      };
+
+      fetch('/enroll', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+      })
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error('Error:', error));
   });
 });
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      course: document.getElementById('course').value
-  };
-
-  fetch('/enroll', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
-  })
-  .then(response => response.text())
-  .then(data => alert(data))
-  .catch(error => console.error('Error:', error));
-});
-
-// Assuming Stripe is integrated, add its JavaScript here
-
