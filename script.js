@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
       tab.addEventListener('click', selectTab);
       tab.click(); // Initialize the first tab
   });
-});
 
 // Simulated fetch function for course contents
 function fetchCourseContent(courseId) {
