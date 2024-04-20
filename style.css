@@ -19,15 +19,19 @@ header {
 nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allows nav items to wrap onto the next line on smaller screens */
     background: #8a2be2;
     padding: 10px 0;
 }
+
 nav a {
     color: white;
-    padding: 10px 20px;
+    padding: 10px 15px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents the text from wrapping inside nav links */
 }
+
 nav a:hover {
     background-color: #7b68ee;
 }

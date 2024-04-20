@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Smooth scrolling for navigation links
   const links = document.querySelectorAll("nav a");
-  for (const link of links) {
+  links.forEach(link => {
       link.addEventListener('click', function(e) {
           e.preventDefault();
           const href = this.getAttribute('href');
           const offsetTop = document.querySelector(href).offsetTop;
-          
+
           scroll({
-              top: offsetTop,
+              top: offsetTop - 100, // Adjusts scroll position to not hide under fixed header if any
               behavior: "smooth"
           });
       });
-  }
+  });
+});
 
   // Tabs for course contents
   const tabs = document.querySelectorAll(".tab");
@@ -96,5 +96,4 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
 });
 
 // Assuming Stripe is integrated, add its JavaScript here
-
 
